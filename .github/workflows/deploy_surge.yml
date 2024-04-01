@@ -1,0 +1,24 @@
+            name: Deploy_surge
+    on:
+    push:
+    branches:[master]
+    pull_request:
+    Branches:[master]
+
+    job:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-go@v5.0.0
+   -  name: install node js
+      run: actions/setup-node@v2-beta
+      with:
+      node-version: 12
+      
+    - name: install surge
+      run: npm install -g surge
+      - name: run surge
+      run: Surge ./ skinny-queen.surge.sh --token ${{ secrets.SURGE_TOKEN}}
+    
+   
+          
