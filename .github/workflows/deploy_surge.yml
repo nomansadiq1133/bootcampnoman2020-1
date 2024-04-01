@@ -1,9 +1,8 @@
-            name: Deploy_surge
-    on:
-    push:
-    branches:[master]
-    pull_request:
-    Branches:[master]
+name: Deploy_website
+on:
+ push:
+    branches :[master]
+   
 
     job:
     build:
