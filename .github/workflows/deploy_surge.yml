@@ -1,23 +1,21 @@
-name: Deploy_website
-on:
- push:
-    branches :[master]
-   
+name: Deploy Website
 
-jobs :
-    build :
+on: [push]
+
+jobs:
+  build:
     runs-on: ubuntu-latest
+    name: Deploying to surge
     steps:
-    - uses: actions/setup-go@v5.0.0   
-    -  name: install nodejs 
-    run: actions/setup-node@v2-beta
-    with :
-      node-version: 12
-      
-    - name: install surge
-      run: npm install -g surge
-      - name: run surge
-      run: Surge ./ skinny-queen.surge.sh --token ${{ secrets.SURGE_TOKEN}}
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run surge
+      run:  Surge ./ skinny-queen.surge.sh --token ${{ secrets.SURGE_TOKEN}}
     
    
           
