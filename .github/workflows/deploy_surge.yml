@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploying to surge
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v2
       - name: Install Node.js
-        uses: actions/setup-node@v5.0.0-beta
+        uses: actions/setup-node@v5-beta
         with:
           node-version: 16
       - name: Install Surge
