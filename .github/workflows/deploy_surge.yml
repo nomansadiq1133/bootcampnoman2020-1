@@ -15,7 +15,8 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
-      run:  Surge ./ skinny-queen.surge.sh --token ${{ secrets.SURGE_TOKEN}}
+        run: surge ./ skinny-queen.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+    
     
    
           
